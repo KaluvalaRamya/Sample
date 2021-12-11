@@ -5,21 +5,21 @@ echo "Installing jenkins server"
 echo "Adding the Jenkins repository key to your system"
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
 echo "Adding the repository in your apt configuration"
-#echo "deb https://pkg.jenkins.io/debian-stable binary/" | sudo tee -a /etc/apt/sources.list
-sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+#echo "deb https://pkg.jenkins.io/debian-stable binary/" | sudo tee -a /etc/apt/sources>
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > /etc/apt/sources.list.d/je>
 echo "update your package"
-apt upgrade -y  # this step was added after we got an error with "no Release file found. Based on Google"
+apt upgrade -y  # this step was added after we got an error with "no Release file found>
 apt-get -y update
 echo "Install jenkins"
 apt-get -y install jenkins
 sleep "30"
+apt-get install jenkins=2.319
 #echo "Change defualt port to 8082"
 #sed -i 's/8080/8082/' /etc/default/jenkins
 echo "Allowing users to signup"
-sed -i 's/<disableSignup>true<\/disableSignup>/<disableSignup>false<\/disableSignup>/' /var/lib/jenkins/config.$
+sed -i 's/<disableSignup>true<\/disableSignup>/<disableSignup>false<\/disableSignup>/' >
 echo "Restart jenkins server"
 systemctl restart jenkins
 echo "Iniatial admin password"
 cat /var/lib/jenkins/secrets/initialAdminPassword
 echo "access your server on browser by <public-ip>:8080"
-

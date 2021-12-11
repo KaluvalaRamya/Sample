@@ -7,11 +7,11 @@
 <!-- italics -->
 * *Clone the repository from gitlab*
 ```
-git clone https://gitlab.com/KaluvalaRamya/krishnakanth.git
+git clone https://gitlab.com/KaluvalaRamya/Sample
 ```
 * *change the directory and give full permissions to owner and execute the script of installation of kind-k8s-cluster with 3 nodes (1 master & 2 worker)*
 ```
-cd krishnakanth/jenkins-installation && chmod 755 install_java8.sh && ./install_java8.sh
+cd Sample && chmod 755 install_java8.sh && ./install_java8.sh
 ```
 * *once jenkins is installed, launch the Jenkins UI and complete the installation*
 * *Login to Jenkins*

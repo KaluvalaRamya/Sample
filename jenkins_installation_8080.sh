@@ -1,14 +1,10 @@
 #!/bin/bash
-echo "installing java using other script in this repo"
-sudo bash ../Java/install_java8.bash
 echo "Installing jenkins server"
-echo "Adding the Jenkins repository key to your system"
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
-echo "Adding the repository in your apt configuration"
 #echo "deb https://pkg.jenkins.io/debian-stable binary/" | sudo tee -a /etc/apt/sources.list
 sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
 echo "update your package"
-apt upgrade -y  # this step was added after we got an error with "no Release file found. Based on Google"
+apt upgrade -y  
 apt-get -y update
 echo "Install jenkins"
 apt-get -y install jenkins
